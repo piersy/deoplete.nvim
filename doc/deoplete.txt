@@ -133,7 +133,16 @@ camel_case
 
 					*deoplete-options-candidate_marks*
 candidate_marks
-		The candidate additional marks.
+		Candidate marks are inserted into the top n popup entries
+		where n is the length of the candidate_marks list. Each
+		candidate mark is inserted into a popup menu entry between the
+		|deoplete-candidate-attribute-kind| and the source identifier.
+		The candidate marks are inserted into the menu entries in the
+		order that they are defined.
+
+		For example the following configuration will add A S D F and G
+		to the first 5 popup menu entries in that order, popup menu
+		entries beyond the 5th will not have any mark added.
 
 		Default value: []
 >
@@ -144,6 +153,7 @@ candidate_marks
 		inoremap <expr>D       deoplete#insert_candidate(2)
 		inoremap <expr>F       deoplete#insert_candidate(3)
 		inoremap <expr>G       deoplete#insert_candidate(4)
+
 <
 						*deoplete-options-ignore_case*
 ignore_case
